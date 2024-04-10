@@ -24,7 +24,7 @@ const InputTask = ({id, onDelete}) => {
     }
 
     return(
-        <div className="bg-slate-400 m-2">
+        <div className="bg-cyan-300 m-2">
             {showComponent ? <TaskValue taskText={text}/> : <input type="text" value={text} onChange={handleChange}/>}
             <button onClick={handleClick}>{showComponent ? 'Редактировать' : 'Сохранить'}</button>
         </div>
