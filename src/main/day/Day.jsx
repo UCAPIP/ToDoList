@@ -14,12 +14,18 @@ export default function Day(props){
         setTasks(prevTasks => prevTasks.filter(task => task.id !== id))
     }
 
+    function handleComplitTask(id){
+        setTasks(prevTasks => prevTasks.filter(task => task.id !== id))
+    }
+
     return(
         <div>
             <h3>{props.day}</h3>
             <button onClick={handleAddTask}>Добавить задачу</button>
             {tasks.map((task) => (
-                <InputTask key={task.id} id={task.id} onDelete={handleDelTask} />
+                <InputTask key={task.id} id={task.id} 
+                onDelete={handleDelTask}
+                onComplit={handleComplitTask} />
             ))}
         </div>
     )
