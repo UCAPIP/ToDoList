@@ -3,6 +3,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-*{
-    background-color: #ccfbf1;
-}
+/* *{
+    background-color: #ccfbf1; ---- ИЗ-ЗА ЭТОЙ ПОЕБЕНИ НА КНОПКАХ ИЗ MATERIALSUI НЕ ВИДНО ТЕКСТ)))) 
+} */

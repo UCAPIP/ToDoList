@@ -1,5 +1,8 @@
 import { useState } from "react"
 import TaskValue from "./TaskValue"
+import Button from '@mui/material/Button';
+import SaveIcon from '@mui/icons-material/Save';
+import CreateIcon from '@mui/icons-material/Create';
 
 const InputTask = ({id, onDelete, onComplit}) => {
 
@@ -15,11 +18,19 @@ const InputTask = ({id, onDelete, onComplit}) => {
     }
 
     return(
-        <div className="bg-cyan-300 m-2">
+        <div className="bg-gray-200 m-2 p-3">
             {showComponent ? 
-            <TaskValue taskText={text} id={id} onDelete={onDelete} onComplit={onComplit} /> : 
-            <input type="text" value={text} onChange={handleChange} className="m-2"/>}
-            <button onClick={handleClick} className="p-2">{showComponent ? 'Редактировать' : 'Сохранить'}</button>
+                <div>
+                    <TaskValue taskText={text} id={id} onDelete={onDelete} onComplit={onComplit} />
+                    <Button variant="outlined" color="secondary" size="small" startIcon={<CreateIcon />}
+                    onClick={handleClick} >Редактировать</Button>
+                </div>
+                : 
+                <div>
+                    <input type="text" value={text} onChange={handleChange} className="m-2"/>
+                    <Button variant="outlined" color="secondary" size="small" startIcon={<SaveIcon />}
+                    onClick={handleClick} >Сохранить</Button>
+                </div>}
         </div>
     )}
 
